@@ -1,0 +1,1170 @@
+<?xml version='1.0' encoding="UTF-8" ?>
+<!-- 
+ Date: 17 Aug 2016
+ This xml file defines the list of tags used for EMV contact, contactless and retail development.
+-->
+<ROOT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Tag_list.xsd">
+  <SECTION name="EMV CONTACT" id ="0" description="list of tags used for EMV contact">
+    <tag>
+      <tagid>5F57</tagid>
+      <Name>Account Type</Name>
+      <description>Indicates the type of account selected on the terminal</description>
+      <Length>1</Length>
+      <Format>n 2</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F01</tagid>
+      <Name>Acquirer Identifier</Name>
+      <description>Uniquely identifies the acquirer within each payment system</description>
+      <Length>6</Length>
+      <Format>n 6-11</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F40</tagid>
+      <Name>Additional Terminal Capabilities</Name>
+      <description>Indicates the data input and output capabilities of the terminal</description>
+      <Length>5</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+      <!-- Byte 1-->
+      <item index="0" information="Cash"/>
+      <item index="1" information="Goods"/>
+      <item index="2" information="Services"/>
+      <item index="3" information="Cashback"/>
+      <item index="4" information="Inquiry"/>
+      <item index="5" information="Transfer"/>
+      <item index="6" information="Payment"/>
+      <item index="7" information="Administrative"/>
+	  <!-- Byte 2-->
+      <item index="8" information="Cash Deposit"/>
+      <item index="9" information="RFU"/>
+      <item index="10" information="RFU"/>
+      <item index="11" information="RFU"/>
+      <item index="12" information="RFU"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+	  <!-- Byte 3-->
+      <item index="16" information="Numeric keys"/>
+      <item index="17" information="Alphabetic and Special character keys"/>
+      <item index="18" information="Command keys"/>
+      <item index="19" information="Function keys"/>
+      <item index="20" information="RFU"/>
+      <item index="21" information="RFU"/>
+      <item index="22" information="RFU"/>
+      <item index="23" information="RFU"/>
+	  <!-- Byte 4-->
+      <item index="24" information="Print, attendant"/>
+      <item index="25" information="Print, cardholder"/>
+      <item index="26" information="Display, attendant"/>
+      <item index="27" information="Display, cardholder"/>
+      <item index="28" information="RFU"/>
+      <item index="29" information="RFU"/>
+      <item index="30" information="Code Table 10"/>
+      <item index="31" information="Code Table 9"/>
+	  <!-- Byte 5-->
+      <item index="32" information="Code Table 8"/>
+      <item index="33" information="Code Table 7"/>
+      <item index="34" information="Code Table 6"/>
+      <item index="35" information="Code Table 5"/>
+      <item index="36" information="Code Table 4"/>
+      <item index="27" information="Code Table 3"/>
+      <item index="38" information="Code Table 2"/>
+      <item index="39" information="Code Table 1"/>
+    </tag>
+    <tag>
+      <tagid>81</tagid>
+      <Name>Amount, Authorised (Binary)</Name>
+      <description>Authorised amount of the transaction (excluding adjustments)</description>
+      <Length>4</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F02</tagid>
+      <Name>Amount, Authorised (Numeric)</Name>
+      <description>Authorised amount of the transaction (excluding adjustments)</description>
+      <Length>6</Length>
+      <Format>n 12</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F04</tagid>
+      <Name>Amount, Other (Binary)</Name>
+      <description>Secondary amount associated with the transaction representing a cashback amount</description>
+      <Length>4</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F03</tagid>
+      <Name>Amount, Other (Numeric)</Name>
+      <description>Secondary amount associated with the transaction representing a cashback amount</description>
+      <Length>6</Length>
+      <Format>n 12</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F3A</tagid>
+      <Name>Amount, Reference Currency</Name>
+      <description>Authorised amount expressed in the reference currency</description>
+      <Length>4</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F26</tagid>
+      <Name>Application Cryptogram</Name>
+      <description>Cryptogram returned by the ICC in response of the GENERATE AC command</description>
+      <Length>8</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F42</tagid>
+      <Name>Application Currency Code</Name>
+      <description>Indicates the currency in which the account is managed according to ISO 4217</description>
+      <Length>2</Length>
+      <Format>n 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F44</tagid>
+      <Name>Application Currency Exponent</Name>
+      <description>Indicates the implied position of the decimal point from the right of the amount represented according to ISO 4217</description>
+      <Length>1</Length>
+      <Format>n 1</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F05</tagid>
+      <Name>Application Discretionary Data</Name>
+      <description>Issuer or payment system specified data relating to the application</description>
+      <Length>1-32</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F25</tagid>
+      <Name>Application Effective Date</Name>
+      <description>Date from which the application may be used</description>
+      <Length>3</Length>
+      <Format>n 6</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F24</tagid>
+      <Name>Application Expiration Date</Name>
+      <description>Date after which application expires</description>
+      <Length>3</Length>
+      <Format>n 6</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>94</tagid>
+      <Name>Application File Locator (AFL)</Name>
+      <description>Indicates the location (SFI, range of records) of the AEFs related to a given application</description>
+      <Length>var. up to 252</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>4F</tagid>
+      <Name>Application Dedicated File (ADF) Name</Name>
+      <description>Identifies the application as described in ISO/IEC 7816-5</description>
+      <Length>5-16</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F06</tagid>
+      <Name>Application Identifier (AID) terminal</Name>
+      <description>Identifies the application as described in ISO/IEC 7816-5</description>
+      <Length>5-16</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>82</tagid>
+      <Name>Application Interchange Profile</Name>
+      <description>Indicates the capabilities of the card to support specific functions in the application</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+	  <!-- Byte 1-->
+	  <item index="0" information="RFU"/>
+      <item index="1" information="SDA Supported"/>
+      <item index="2" information="DDA Supported"/>
+      <item index="3" information="Cardholder Verification is Supported"/>
+      <item index="4" information="Terminal Risk Management is to be performed"/>
+      <item index="5" information="Issuier Authentication is Supported"/>
+      <item index="6" information="RFU"/>
+      <item index="7" information="CDA Supported"/>
+	  <!-- Byte 2-->
+      <item index="8" information="RFU"/>
+      <item index="9" information="RFU"/>
+      <item index="10" information="RFU"/>
+      <item index="11" information="RFU"/>
+      <item index="12" information="RFU"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+    </tag>
+    <tag>
+      <tagid>50</tagid>
+      <Name>Application Label</Name>
+      <description>Mnemonic associated with the AID according to ISO/IEC 7816-5</description>
+      <Length>1-16</Length>
+      <Format>ans with the special character limited to space</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F12</tagid>
+      <Name>Application Preferred Name</Name>
+      <description>Preferred mnemonic associated with the AID</description>
+      <Length>1-16</Length>
+      <Format>ans (see section 4.3)</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5A</tagid>
+      <Name>Application Primary Account Number (PAN)</Name>
+      <description>Valid cardholder account number</description>
+      <Length>var. up to 10</Length>
+      <Format>cn var. up to 19</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F34</tagid>
+      <Name>Application Primary Account Number (PAN) Sequence Number</Name>
+      <description>Identifies and differentiates cards with the same PAN</description>
+      <Length>1</Length>
+      <Format>n 2</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>87</tagid>
+      <Name>Application Priority Indicator</Name>
+      <description>Indicates the priority of a given application or group of applications in a directory</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F3B</tagid>
+      <Name>Application Reference Currency</Name>
+      <description>1-4 currency codes used between the terminal and the ICC when the Transaction Currency Code is different from the Application Currency Code; each code is 3 digits according to ISO 4217</description>
+      <Length>2-8</Length>
+      <Format>n 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F43</tagid>
+      <Name>Application Reference Currency Exponent</Name>
+      <description>Indicates the implied position of the decimal point from the right of the amount, for each of the 1-4 reference currencies represented according to ISO 4217</description>
+      <Length>1-4</Length>
+      <Format>n 1</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>61</tagid>
+      <Name>Application Template</Name>
+      <description>Contains one or more data objects relevant to an application directory entry according to ISO/IEC 7816-5</description>
+      <Length>var. up to 252</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F36</tagid>
+      <Name>Application Transaction Counter (ATC)</Name>
+      <description>Counter maintained by the application in the ICC (incrementing the ATC is managed by the ICC)</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F07</tagid>
+      <Name>Application Usage Control</Name>
+      <description>Indicates issuers specified restrictions on the geographic usage and services allowed for the application</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+	  <!-- Byte 1-->
+      <item index="0" information="Valid for domestic cash transactions"/>
+      <item index="1" information="Valid for domestic cash transactions"/>
+      <item index="2" information="Valid for domestic goods"/>
+      <item index="3" information="Valid for international goods"/>
+      <item index="4" information="Valid for domestic services"/>
+      <item index="5" information="Valid for international services"/>
+      <item index="6" information="Valid at ATMs"/>
+      <item index="7" information="Valid at terminals other than ATMs"/>
+	  <!-- Byte 2-->
+      <item index="8" information="Domestic cashback allowed"/>
+      <item index="9" information="International cashback allowed"/>
+      <item index="10" information="RFU"/>
+      <item index="11" information="RFU"/>
+      <item index="12" information="RFU"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+    </tag>
+    <tag>
+      <tagid>9F08</tagid>
+      <Name>Application Version Number</Name>
+      <description>Version number assigned by the payment system for the application</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F09</tagid>
+      <Name>Application Version Number</Name>
+      <description>Version number assigned by the payment system for the application</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>89</tagid>
+      <Name>Authorisation Code</Name>
+      <description>Value generated by the authorisation authority for an approved transaction</description>
+      <Length>6</Length>
+      <Format>As defined by the Payment Systems</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>8A</tagid>
+      <Name>Authorisation Response Code</Name>
+      <description>Code that defines the disposition of a message</description>
+      <Length>2</Length>
+      <Format>an 2</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F54</tagid>
+      <Name>Bank Identifier Code (BIC)</Name>
+      <description>Uniquely identifies a bank as defined in ISO 9362.</description>
+      <Length>8 or 11</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>8C</tagid>
+      <Name>Card Risk Management Data Object List 1 (CDOL1)</Name>
+      <description>List of data objects (tag and length) to be passed to the ICC in the first GENERATE AC command</description>
+      <Length>var. up to 252</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>8D</tagid>
+      <Name>Card Risk Management Data Object List 2 (CDOL2)</Name>
+      <description>List of data objects (tag and length) to be passed to the ICC in the second GENERATE AC command</description>
+      <Length>var. up to 252</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F20</tagid>
+      <Name>Cardholder Name</Name>
+      <description>Indicates cardholder name according to ISO 7813</description>
+      <Length>2-26</Length>
+      <Format>ans 2-26</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F0B</tagid>
+      <Name>Cardholder Name Extended</Name>
+      <description>Indicates the whole cardholder name when greater than 26 characters using the same coding convention as in ISO 7813</description>
+      <Length>27-45</Length>
+      <Format>ans 27-45</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag type="8E">
+      <tagid>8E</tagid>
+      <Name>Cardholder Verification Method (CVM) List</Name>
+      <description>Identifies a method of verification of the cardholder supported by the application</description>
+      <Length>10-252</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F34</tagid>
+      <Name>Cardholder Verification Method (CVM) Results</Name>
+      <description>Indicates the results of the last CVM performed</description>
+      <Length>3</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+	  <!-- Byte 1-->
+      <item index="0" information="Valid for domestic cash transactions"/>
+      <item index="1" information="Valid for domestic cash transactions"/>
+      <item index="2" information="Valid for domestic goods"/>
+      <item index="3" information="Valid for international goods"/>
+      <item index="4" information="Valid for domestic services"/>
+      <item index="5" information="Valid for international services"/>
+      <item index="6" information="Valid at ATMs"/>
+      <item index="7" information="Valid at terminals other than ATMs"/>
+	  <!-- Byte 2-->
+      <item index="8" information="Domestic cashback allowed"/>
+      <item index="9" information="International cashback allowed"/>
+      <item index="10" information="RFU"/>
+      <item index="11" information="RFU"/>
+      <item index="12" information="RFU"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+    </tag>
+    <tag>
+      <tagid>8F</tagid>
+      <Name>Certification Authority Public Key Index</Name>
+      <description>Identifies the certification authoritys public key in conjunction with the RID</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F22</tagid>
+      <Name>Certification Authority Public Key Index</Name>
+      <description>Identifies the certification authoritys public key in conjunction with the RID</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>83</tagid>
+      <Name>Command Template</Name>
+      <description>Identifies the data field of a command message</description>
+      <Length>var.</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F27</tagid>
+      <Name>Cryptogram Information Data</Name>
+      <description>Indicates the type of cryptogram and the actions to be performed by the terminal</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+    </tag>
+    <tag>
+      <tagid>9F45</tagid>
+      <Name>Data Authentication Code</Name>
+      <description>An issuer assigned value that is retained by the terminal during the verification process of the Signed Static Application Data</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>84</tagid>
+      <Name>Dedicated File (DF) Name</Name>
+      <description>Identifies the name of the DF as described in ISO/IEC 7816-4</description>
+      <Length>5-16</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9D</tagid>
+      <Name>Directory Definition File (DDF) Name</Name>
+      <description>Identifies the name of a DF associated with a directory</description>
+      <Length>5-16</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>73</tagid>
+      <Name>Directory Discretionary Template</Name>
+      <description>Issuer discretionary part of the directory according to ISO/IEC 7816-5</description>
+      <Length>var. up to 252</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F49</tagid>
+      <Name>Dynamic Data Authentication Data Object List (DDOL)</Name>
+      <description>List of data objects (tag and length) to be passed to the ICC in the INTERNAL AUTHENTICATE command</description>
+      <Length>up to 252</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>BF0</tagid>
+      <Name>File Control Information (FCI) Issuer Discretionary Data</Name>
+      <description>Issuer discretionary part of the FCI</description>
+      <Length>var. up to 222</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>A5</tagid>
+      <Name>File Control Information (FCI) Proprietary Template</Name>
+      <description>Identifies the data object proprietary to this specification in the FCI template according to ISO/IEC 7816-4</description>
+      <Length>var.</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>6F</tagid>
+      <Name>File Control Information (FCI) Template</Name>
+      <description>Identifies the FCI template according to ISO/IEC 7816-4</description>
+      <Length>var. up to 252</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F4C</tagid>
+      <Name>ICC Dynamic Number</Name>
+      <description>Time-variant number generated by the ICC, to be captured by the terminal</description>
+      <Length>2-8</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F2D</tagid>
+      <Name>Integrated Circuit Card (ICC) PIN Encipherment Public Key Certificate</Name>
+      <description>ICC PIN Encipherment Public Key certified by the issuer</description>
+      <Length>NI</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F2E</tagid>
+      <Name>Integrated Circuit Card (ICC) PIN Encipherment Public Key Exponent</Name>
+      <description>ICC PIN Encipherment Public Key Exponent used for PIN encipherment</description>
+      <Length>1 or 3</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F2F</tagid>
+      <Name>Integrated Circuit Card (ICC) PIN Encipherment Public Key Remainder</Name>
+      <description>Remaining digits of the ICC PIN Encipherment Public Key Modulus</description>
+      <Length>NPE - NI + 42</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F46</tagid>
+      <Name>Integrated Circuit Card (ICC) Public Key Certificate</Name>
+      <description>ICC Public Key certified by the issuer</description>
+      <Length>NI</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F47</tagid>
+      <Name>Integrated Circuit Card (ICC) Public Key Exponent</Name>
+      <description>ICC Public Key Exponent used for the verification of the Signed Dynamic Application Data</description>
+      <Length>1 to 3</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F48</tagid>
+      <Name>Integrated Circuit Card (ICC) Public Key Remainder</Name>
+      <description>Remaining digits of the ICC Public Key Modulus</description>
+      <Length>NIC - NI + 42</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F1E</tagid>
+      <Name>Interface Device (IFD) Serial Number</Name>
+      <description>Unique and permanent serial number assigned to the IFD by the manufacturer</description>
+      <Length>8</Length>
+      <Format>an 8</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F53</tagid>
+      <Name>International Bank Account Number (IBAN)</Name>
+      <description>Uniquely identifies the account of a customer at a financial institution as defined in ISO 13616</description>
+      <Length>Var. up to 34</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F0D</tagid>
+      <Name>Issuer Action Code - Default</Name>
+      <description>Specifies the issuers conditions that cause a transaction to be rejected if it might have been approved online, but the terminal is unable to process the transaction online</description>
+      <Length>5</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F0E</tagid>
+      <Name>Issuer Action Code - Denial</Name>
+      <description>Specifies the issuers conditions that cause the denial of a transaction without attempt to go online</description>
+      <Length>5</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F0F</tagid>
+      <Name>Issuer Action Code - Online</Name>
+      <description>Specifies the issuers conditions that cause a transaction to be transmitted online</description>
+      <Length>5</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F10</tagid>
+      <Name>Issuer Application Data</Name>
+      <description>Contains proprietary application data for transmission to the issuer in an online transaction</description>
+      <Length>var. up to 32</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>91</tagid>
+      <Name>Issuer Authentication Data</Name>
+      <description>Data sent to the ICC for online issuer authentication</description>
+      <Length>8-16</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F11</tagid>
+      <Name>Issuer Code Table Index</Name>
+      <description>Indicates the code table according to ISO/IEC 8859 for displaying the Application Preferred Name</description>
+      <Length>1</Length>
+      <Format>n 2</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F28</tagid>
+      <Name>Issuer Country Code</Name>
+      <description>Indicates the country of the issuer according to ISO 3166</description>
+      <Length>2</Length>
+      <Format>n 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F55</tagid>
+      <Name>Issuer Country Code (alpha2 format)</Name>
+      <description>Indicates the country of the issuer as defined in ISO 3166 (using a 2 character alphabetic code)</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F56</tagid>
+      <Name>Issuer Country Code (alpha3 format)</Name>
+      <description>Indicates the country of the issuer as defined in ISO 3166 (using a 3 character alphabetic code)</description>
+      <Length>3</Length>
+      <Format>a 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>42</tagid>
+      <Name>Issuer Identification Number (IIN)</Name>
+      <description>The number that identifies the major industry and the card issuer and that forms the first part of the Primary Account Number (PAN)</description>
+      <Length>3</Length>
+      <Format>n 6</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>90</tagid>
+      <Name>Issuer Public Key Certificate</Name>
+      <description>Issuer public key certified by a certification authority</description>
+      <Length>NCA</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F32</tagid>
+      <Name>Issuer Public Key Exponent</Name>
+      <description>Issuer public key exponent used for the verification of the Signed Static Application Data and the ICC Public Key Certificate</description>
+      <Length>1 to 3</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>92</tagid>
+      <Name>Issuer Public Key Remainder</Name>
+      <description>Remaining digits of the Issuer Public Key Modulus</description>
+      <Length>NI - NCA + 36</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>86</tagid>
+      <Name>Issuer Script Command</Name>
+      <description>Contains a command for transmission to the ICC</description>
+      <Length>var. up to 261</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F18</tagid>
+      <Name>Issuer Script Identifier</Name>
+      <description>Identification of the Issuer Script</description>
+      <Length>4</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>71</tagid>
+      <Name>Issuer Script Template 1</Name>
+      <description>Contains proprietary issuer data for transmission to the ICC before the second GENERATE AC command</description>
+      <Length>var.</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>72</tagid>
+      <Name>Issuer Script Template 2</Name>
+      <description>Contains proprietary issuer data for transmission to the ICC after the second GENERATE AC command</description>
+      <Length>var.</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F50</tagid>
+      <Name>Issuer URL</Name>
+      <description>The URL provides the location of the Issuers Library Server on the Internet</description>
+      <Length>var.</Length>
+      <Format>ans</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F2D</tagid>
+      <Name>Language Preference</Name>
+      <description>1-4 languages stored in order of preference, each represented by 2 alphabetical characters according to ISO 639</description>
+      <Length>2-8</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F13</tagid>
+      <Name>Last Online Application Transaction Counter (ATC) Register</Name>
+      <description>ATC value of the last transaction that went online</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F4D</tagid>
+      <Name>Log Entry</Name>
+      <description>Provides the SFI of the Transaction Log file and its number of records</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F4F</tagid>
+      <Name>Log Format</Name>
+      <description>List (in tag and length format) of data objects representing the logged data elements that are passed to the terminal when a transaction log record is read</description>
+      <Length>var.</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F14</tagid>
+      <Name>Lower Consecutive Offline Limit</Name>
+      <description>Issuer-specified preference for the maximum number of consecutive offline transactions for this ICC application allowed in a terminal with online capability</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F15</tagid>
+      <Name>Merchant Category Code</Name>
+      <description>Classifies the type of business being done by the merchant, represented according to ISO 8583:1993 for Card Acceptor Business Code</description>
+      <Length>2</Length>
+      <Format>n 4</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F16</tagid>
+      <Name>Merchant Identifier</Name>
+      <description>When concatenated with the Acquirer Identifier, uniquely identifies a given merchant</description>
+      <Length>15</Length>
+      <Format>ans 15</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F4E</tagid>
+      <Name>Merchant Name and Location</Name>
+      <description>Indicates the name and location of the merchant</description>
+      <Length>var.</Length>
+      <Format>ans</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F17</tagid>
+      <Name>Personal Identification Number (PIN) Try Counter</Name>
+      <description>Number of PIN tries remaining</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F39</tagid>
+      <Name>Point-of-Service (POS) Entry Mode</Name>
+      <description>Indicates the method by which the PAN was entered, according to the first two digits of the ISO 8583:1987 POS Entry Mode</description>
+      <Length>1</Length>
+      <Format>n2</Format>
+      <Flag>1</Flag>
+    </tag>
+    <tag>
+      <tagid>9F38</tagid>
+      <Name>Processing Options Data Object List (PDOL)</Name>
+      <description>Contains a list of terminal resident data objects (tags and lengths) needed by the ICC in processing the GET PROCESSING OPTIONS command</description>
+      <Length>var.</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>70</tagid>
+      <Name>READ RECORD Response Message Template</Name>
+      <description>Contains the contents of the record read. (Mandatory for SFIs 1-10. Response messages for SFIs 11-30 are outside the scope of EMV, but may use template '70')</description>
+      <Length>var. up to 252</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>80</tagid>
+      <Name>Response Message Template Format 1</Name>
+      <description>Contains the data objects (without tags and lengths) returned by the ICC in response to a command</description>
+      <Length>var.</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>77</tagid>
+      <Name>Response Message Template Format 2</Name>
+      <description>Contains the data objects (with tags and lengths) returned by the ICC in response to a command</description>
+      <Length>var.</Length>
+      <Format>var.</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F30</tagid>
+      <Name>Service Code</Name>
+      <description>Service code as defined in ISO/IEC 7813 for track 1 and track 2</description>
+      <Length>2</Length>
+      <Format>n 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>88</tagid>
+      <Name>Short File Identifier (SFI)</Name>
+      <description>Identifies the AEF referenced in commands related to a given ADF or DDF. It is a binary data object having a value in the range 1 to 30 and with the three high order bits set to zero.</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F4B</tagid>
+      <Name>Signed Dynamic Application Data</Name>
+      <description>Digital signature on critical application parameters for DDA or CDA</description>
+      <Length>NIC</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>93</tagid>
+      <Name>Signed Static Application Data</Name>
+      <description>Digital signature on critical application parameters for SDA</description>
+      <Length>NI</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F4A</tagid>
+      <Name>Static Data Authentication Tag List</Name>
+      <description>List of tags of primitive data objects defined in this specification whose value fields are to be included in the Signed Static or Dynamic Application Data</description>
+      <Length>var.</Length>
+      <Format></Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F33</tagid>
+      <Name>Terminal Capabilities</Name>
+      <description>Indicates the card data input, CVM, and security capabilities of the terminal</description>
+      <Length>3</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+	  <!-- Byte 1-->
+	  <item index="0" information="Manual Key Entry"/>
+      <item index="1" information="Magnetic Stripe"/>
+      <item index="2" information="IC with Contact"/>
+      <item index="3" information="RFU"/>
+      <item index="4" information="RFU"/>
+      <item index="5" information="RFU"/>
+      <item index="6" information="RFU"/>
+      <item index="7" information="RFU"/>
+	  <!-- Byte 2-->
+      <item index="8" information="Plaintext PIN for ICC Verification"/>
+      <item index="9" information="Enciphered PIN for Online Verification"/>
+      <item index="10" information="Signature"/>
+      <item index="11" information="Enciphered PIN for ICC Verification"/>
+      <item index="12" information="No CVM required"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+	  <!-- Byte 3-->
+      <item index="16" information="SDA"/>
+      <item index="17" information="DDA"/>
+      <item index="18" information="Card Capture"/>
+      <item index="19" information="RFU"/>
+      <item index="20" information="CDA"/>
+      <item index="21" information="RFU"/>
+      <item index="22" information="RFU"/>
+      <item index="23" information="RFU"/>
+    </tag>
+    <tag>
+      <tagid>9F1A</tagid>
+      <Name>Terminal Country Code</Name>
+      <description>Indicates the country of the terminal, represented according to ISO 3166</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F1B</tagid>
+      <Name>Terminal Floor Limit</Name>
+      <description>Indicates the floor limit in the terminal in conjunction with the AID</description>
+      <Length>4</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F1C</tagid>
+      <Name>Terminal Identification</Name>
+      <description>Designates the unique location of a terminal at a merchant</description>
+      <Length>8</Length>
+      <Format>an 8</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F1D</tagid>
+      <Name>Terminal Risk Management Data</Name>
+      <description>Application-specific value used by the card for risk management purposes</description>
+      <Length>1-8</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+    </tag>
+    <tag>
+      <tagid>9F35</tagid>
+      <Name>Terminal Type</Name>
+      <description>Indicates the environment of the terminal, its communications capability, and its operational control</description>
+      <Length>1</Length>
+      <Format>n 2</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>95</tagid>
+      <Name>Terminal Verification Results</Name>
+      <description>Status of the different functions as seen from the terminal</description>
+      <Length>5</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+	  <!-- Byte 1-->
+      <item index="0" information="Offline data authentication was not performed"/>
+      <item index="1" information="SDA failed"/>
+      <item index="2" information="ICC data missing"/>
+      <item index="3" information="Card appears on terminal exception file"/>
+      <item index="4" information="DDA failed"/>
+      <item index="5" information="CDA failed"/>
+      <item index="6" information="RFU"/>
+      <item index="7" information="RFU"/>
+	  <!-- Byte 2-->
+      <item index="8" information="ICC and terminal have different application versions"/>
+      <item index="9" information="Expired application"/>
+      <item index="10" information="Application not yet effective"/>
+      <item index="11" information="Requested service not allowed for card product"/>
+      <item index="12" information="New card"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+	  <!-- Byte 3-->
+      <item index="16" information="Cardholder verification was not successful"/>
+      <item index="17" information="Unrecognised CVM"/>
+      <item index="18" information="PIN Try Limit exceeded"/>
+      <item index="19" information="PIN entry required and PIN pad not present or not working"/>
+      <item index="20" information="PIN entry required, PIN pad present, but PIN was not entered"/>
+      <item index="21" information="Online PIN entered"/>
+      <item index="22" information="RFU"/>
+      <item index="23" information="RFU"/>
+	  <!-- Byte 4-->
+      <item index="24" information="Transaction exceeds floor limit"/>
+      <item index="25" information="Lower consecutive offline limit exceeded"/>
+      <item index="26" information="Upper consecutive offline limit exceeded"/>
+      <item index="27" information="Transaction selected randomly for online processing"/>
+      <item index="28" information="Merchant forced transaction online"/>
+      <item index="29" information="RFU"/>
+      <item index="30" information="RFU"/>
+      <item index="31" information="RFU"/>
+	  <!-- Byte 5-->
+      <item index="32" information="Default TDOL used"/>
+      <item index="33" information="Issuer authentication failed"/>
+      <item index="34" information="Script processing failed before final GENERATE AC"/>
+      <item index="35" information="Script processing failed before final GENERATE AC"/>
+      <item index="36" information="RFU"/>
+      <item index="27" information="RFU"/>
+      <item index="38" information="RFU"/>
+      <item index="39" information="RFU"/>
+    </tag>
+    <tag>
+      <tagid>9F1F</tagid>
+      <Name>Track 1 Discretionary Data</Name>
+      <description>Discretionary part of track 1 according to ISO/IEC 7813</description>
+      <Length>var.</Length>
+      <Format>ans</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F20</tagid>
+      <Name>Track 2 Discretionary Data</Name>
+      <description>Discretionary part of track 2 according to ISO/IEC 7813</description>
+      <Length>var.</Length>
+      <Format>cn</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>57</tagid>
+      <Name>Track 2 Equivalent Data</Name>
+      <description>Contains the data elements of track 2 according to ISO/IEC 7813, excluding start sentinel, end sentinel, and Longitudinal</description>
+      <Length>var. up to 19</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>97</tagid>
+      <Name>Transaction Certificate Data Object List (TDOL)</Name>
+      <description>List of data objects (tag and length) to be used by the terminal in generating the TC Hash Value</description>
+      <Length>var. up to 252</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>98</tagid>
+      <Name>Transaction Certificate (TC) Hash Value</Name>
+      <description>Result of a hash function</description>
+      <Length>20</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F2A</tagid>
+      <Name>Transaction Currency Code</Name>
+      <description>Indicates the currency code of the transaction according to ISO 4217</description>
+      <Length>2</Length>
+      <Format>n 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>5F36</tagid>
+      <Name>Transaction Currency Exponent</Name>
+      <description>Indicates the implied position of the decimal point from the right of the transaction amount represented according to ISO 4217</description>
+      <Length>1</Length>
+      <Format>n 1</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9A</tagid>
+      <Name>Transaction Date</Name>
+      <description>Local date that the transaction was authorised</description>
+      <Length>3</Length>
+      <Format>n 6</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>99</tagid>
+      <Name>Transaction Personal Identification Number (PIN) Data</Name>
+      <description>Data entered by the cardholder for the purpose of the PIN verification</description>
+      <Length>var.</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F3C</tagid>
+      <Name>Transaction Reference Currency Code</Name>
+      <description>Code defining the common currency used by the terminal in case the Transaction Currency Code is different from the Application Currency Code</description>
+      <Length>2</Length>
+      <Format>n 3</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F3D</tagid>
+      <Name>Transaction Reference Currency Exponent</Name>
+      <description>Indicates the implied position of the decimal point from the right of the transaction amount, with the Transaction Reference Currency Code represented according to ISO 4217</description>
+      <Length>1</Length>
+      <Format>n 1</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F41</tagid>
+      <Name>Transaction Sequence Counter</Name>
+      <description>Counter maintained by the terminal that is incremented by one for each transaction</description>
+      <Length>2-4</Length>
+      <Format>n 4-8</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9B</tagid>
+      <Name>Transaction Status Information</Name>
+      <description>Indicates the functions performed in a transaction</description>
+      <Length>2</Length>
+      <Format>b</Format>
+      <Flag>1</Flag>
+	  <!-- Byte 1-->
+      <item index="0" information="Offline data authentication was performed"/>
+      <item index="1" information="Cardholder Verofocation was performed"/>
+      <item index="2" information="Card Risk Management was performed"/>
+      <item index="3" information="Issuer Authentication was performed"/>
+      <item index="4" information="Terminal Risk Management was performed"/>
+      <item index="5" information="Script Processing was performed"/>
+      <item index="6" information="RFU"/>
+      <item index="7" information="RFU"/>
+	  <!-- Byte 2-->
+      <item index="8" information="RFU"/>
+      <item index="9" information="RFU"/>
+      <item index="10" information="RFU"/>
+      <item index="11" information="RFU"/>
+      <item index="12" information="RFU"/>
+      <item index="13" information="RFU"/>
+      <item index="14" information="RFU"/>
+      <item index="15" information="RFU"/>
+    </tag>
+    <tag>
+      <tagid>9F21</tagid>
+      <Name>Transaction Time</Name>
+      <description>Local time that the transaction was authorised</description>
+      <Length>3</Length>
+      <Format>n 6</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9C</tagid>
+      <Name>Transaction Type</Name>
+      <description>Indicates the type of financial transaction, represented by the first two digits of the ISO 8583:1987 Processing Code</description>
+      <Length>1</Length>
+      <Format>n 2</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F37</tagid>
+      <Name>Unpredictable Number</Name>
+      <description>Value to provide variability and uniqueness to the generation of a cryptogram</description>
+      <Length>4</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+    <tag>
+      <tagid>9F23</tagid>
+      <Name>Upper Consecutive Offline Limit</Name>
+      <description>Issuer-specified preference for the maximum number of consecutive offline transactions for this ICC application allowed in a terminal without online capability</description>
+      <Length>1</Length>
+      <Format>b</Format>
+      <Flag>0</Flag>
+    </tag>
+  </SECTION>
+  <SECTION name="EMV CONTACTLESS" id ="1" description="list of tags used for contactless">
+  </SECTION>
+  <SECTION name="RETAIL" id ="2" description="list of tags used for retail">
+  </SECTION>
+</ROOT>

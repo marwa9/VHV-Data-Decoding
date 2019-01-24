@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ROOT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="SECTION">
+          <xs:complexType mixed="true">
+            <xs:sequence minOccurs="0">
+              <xs:element maxOccurs="unbounded" name="tag">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tagid" type="xs:string" />
+                    <xs:element name="Name" type="xs:string" />
+                    <xs:element name="description" type="xs:string" />
+                    <xs:element name="Length" type="xs:string" />
+                    <xs:element name="Format" type="xs:string" />
+                    <xs:element name="Flag" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="item">
+                      <xs:complexType>
+                        <xs:attribute name="index" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="information" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="type" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="description" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
